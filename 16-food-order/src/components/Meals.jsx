@@ -9,7 +9,11 @@ export default function Meals() {
     data: loadedMeals,
     isLoading,
     error,
-  } = useHttp("http://localhost:3000/meals", requestConfig, []);
+  } = useHttp(
+    "https://food-order-f6700-default-rtdb.firebaseio.com/meals.json",
+    requestConfig,
+    []
+  );
 
   if (isLoading) {
     return <p className="center">메뉴 가져오는 중...</p>;

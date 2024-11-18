@@ -25,7 +25,10 @@ export default function Checkout() {
     error,
     sendRequest,
     cleaerData,
-  } = useHttp("http://localhost:3000/orders", requestConfig);
+  } = useHttp(
+    "https://food-order-f6700-default-rtdb.firebaseio.com/orders.json",
+    requestConfig
+  );
 
   const cartTotal = cartCtx.items.reduce(
     (totalPrice, item) => totalPrice + item.quantity * item.price,
