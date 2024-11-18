@@ -17,7 +17,9 @@ function EventsPage() {
 export default EventsPage;
 
 async function loadEvents() {
-  const response = await fetch("http://localhost:8080/events");
+  const response = await fetch(
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/20-react-router-spa-2/events.json"
+  );
   if (!response.ok) {
     return json(
       { message: "이벤트를 가져올 수 없습니다." },

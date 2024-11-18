@@ -10,7 +10,7 @@ export default function Meals() {
     isLoading,
     error,
   } = useHttp(
-    "https://food-order-f6700-default-rtdb.firebaseio.com/meals.json",
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/16-food-order/meals.json",
     requestConfig,
     []
   );

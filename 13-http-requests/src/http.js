@@ -1,6 +1,6 @@
 export async function fetchAvailablePlaces() {
   const response = await fetch(
-    "https://http-requests-19c14-default-rtdb.firebaseio.com/places.json"
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/13-http-requests/places.json"
   );
   const resData = await response.json();
 
@@ -13,7 +13,7 @@ export async function fetchAvailablePlaces() {
 
 export async function fetchUserPlaces() {
   const response = await fetch(
-    "https://http-requests-19c14-default-rtdb.firebaseio.com/user-places.json"
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/13-http-requests/user-places.json"
   );
   const resData = await response.json();
 
@@ -26,7 +26,7 @@ export async function fetchUserPlaces() {
 
 export async function updateUserPlaces(places) {
   const response = await fetch(
-    "https://http-requests-19c14-default-rtdb.firebaseio.com/user-places.json",
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/13-http-requests/user-places.json",
     {
       method: "PUT",
       body: JSON.stringify({ places }),

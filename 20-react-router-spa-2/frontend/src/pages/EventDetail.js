@@ -29,7 +29,9 @@ export default function EventDetailPage() {
 }
 
 async function loadEvent(id) {
-  const response = await fetch(`http://localhost:8080/events/${id}`);
+  const response = await fetch(
+    `https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/20-react-router-spa-2/events/${id}.json`
+  );
 
   if (!response.ok) {
     throw json(
@@ -43,7 +45,9 @@ async function loadEvent(id) {
 }
 
 async function loadEvents() {
-  const response = await fetch("http://localhost:8080/events");
+  const response = await fetch(
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/20-react-router-spa-2/events.json"
+  );
   if (!response.ok) {
     return json(
       { message: "이벤트를 가져올 수 없습니다." },
@@ -68,12 +72,15 @@ export async function loader({ request, params }) {
 export async function action({ params, request }) {
   const eventId = params.eventId;
   const token = getAuthToken();
-  const response = await fetch(`http://localhost:8080/events/${eventId}`, {
-    method: request.method,
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
+  const response = await fetch(
+    `https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/20-react-router-spa-2/events/${eventId}.json`,
+    {
+      method: request.method,
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }
+  );
 
   if (!response.ok) {
     throw json({ message: "이벤트를 삭제할 수 없습니다." }, { status: 500 });

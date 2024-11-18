@@ -26,7 +26,7 @@ export default function Checkout() {
     sendRequest,
     cleaerData,
   } = useHttp(
-    "https://food-order-f6700-default-rtdb.firebaseio.com/orders.json",
+    "https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/16-food-order/orders.json",
     requestConfig
   );
 
