@@ -6,7 +6,6 @@ export default function Places({
   isLoading,
   loadingText,
 }) {
-  console.log(places);
   return (
     <section className="places-category">
       <h2>{title}</h2>
@@ -20,8 +19,8 @@ export default function Places({
             <li key={place.id} className="place-item">
               <button onClick={() => onSelectPlace(place)}>
                 <img
-                  src={`http://localhost:3000/${place.image.src}`}
-                  alt={place.image.alt}
+                  src={`/${place.image.src}`}
+                  alt={place.image.alt || "image"}
                 />
                 <h3>{place.title}</h3>
               </button>

@@ -1,5 +1,7 @@
 export async function fetchAvailablePlaces() {
-  const response = await fetch("http://localhost:3000/places");
+  const response = await fetch(
+    "https://http-requests-19c14-default-rtdb.firebaseio.com/places.json"
+  );
   const resData = await response.json();
 
   if (!response.ok) {
@@ -10,7 +12,9 @@ export async function fetchAvailablePlaces() {
 }
 
 export async function fetchUserPlaces() {
-  const response = await fetch("http://localhost:3000/user-places");
+  const response = await fetch(
+    "https://http-requests-19c14-default-rtdb.firebaseio.com/user-places.json"
+  );
   const resData = await response.json();
 
   if (!response.ok) {
@@ -21,13 +25,16 @@ export async function fetchUserPlaces() {
 }
 
 export async function updateUserPlaces(places) {
-  const response = await fetch("http://localhost:3000/user-places", {
-    method: "PUT",
-    body: JSON.stringify({ places }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    "https://http-requests-19c14-default-rtdb.firebaseio.com/user-places.json",
+    {
+      method: "PUT",
+      body: JSON.stringify({ places }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   const resData = await response.json();
 
   if (!response.ok) {
