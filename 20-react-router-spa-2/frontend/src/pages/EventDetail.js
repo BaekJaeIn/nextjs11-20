@@ -30,7 +30,7 @@ export default function EventDetailPage() {
 
 async function loadEvent(id) {
   const response = await fetch(
-    `https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/20-react-router-spa-2/events/${id}.json`
+    `https://react-http-20885-default-rtdb.asia-southeast1.firebasedatabase.app/20-react-router-spa-2/events.json`
   );
 
   if (!response.ok) {
@@ -40,7 +40,9 @@ async function loadEvent(id) {
     );
   } else {
     const resData = await response.json();
-    return resData.event;
+    const result = resData.events.filter((event) => event.id == id);
+
+    return result[0];
   }
 }
 
